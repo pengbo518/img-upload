@@ -17,12 +17,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // 获取文件的真实路径 img-upload 代表项目工程名，需要更改
-        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\static" + UploadUtils.IMG_PATH_PREFIX;
+        String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static" + UploadUtils.IMG_PATH_PREFIX;
         String os = System.getProperty("os.name");
         if (os.toLowerCase().startsWith("win")) {
             registry.addResourceHandler("/upload/images/**")
                     .addResourceLocations("file:" + path);
-        }else{
+        } else {
             // linux 和 mac 系统
             registry.addResourceHandler("/upload/images/**")
                     .addResourceLocations("file:" + path);

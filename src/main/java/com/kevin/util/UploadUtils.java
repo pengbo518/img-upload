@@ -2,12 +2,15 @@ package com.kevin.util;
 
 import java.io.File;
 
+/**
+ * 工具类
+ * Kevin
+ * 2020年1月10日
+ */
 public class UploadUtils {
 
     // 项目根路径下的目录 SpringBoot static
     public final static String IMG_PATH_PREFIX = "/upload/images/";
-
-
 
     /**
      * 上传文件的存放 "文件夹" 路径

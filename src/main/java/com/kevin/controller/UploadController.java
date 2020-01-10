@@ -13,18 +13,26 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+/**
+ * 上传图片
+ * Kevin
+ * 2020年1月10日
+ */
 @Controller
 @Slf4j
 public class UploadController {
-    private String view_index = "index";
 
+    /**
+     * 上传图片
+     * @param img   图片路径
+     * @return      图片保存路径
+     */
     @RequestMapping("/upload")
     @ResponseBody
     public String upload(@RequestParam("img") MultipartFile img) {
         if (img == null) {
             return null;
         }
-        // 保存图片
         String originalFilename = img.getOriginalFilename();
         // 文件后缀名
         String prefix = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
@@ -41,9 +49,13 @@ public class UploadController {
         return null;
     }
 
+    /**
+     * 首页
+     * @return
+     */
     @GetMapping("/index")
     public String index(){
-        return view_index;
+        return "index";
     }
 
 }
